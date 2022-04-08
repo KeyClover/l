@@ -1,32 +1,54 @@
 package com.company;
 
 public class LCD {
+    public static int HEIGHT = 25; //default HEIGHT for the LCD display
+    public static int WIDTH = 80;  //default WIDE for the LCD display
+
     public static void clearScreen() {
 
-        for (int i = 0; i <= 25; i++ ) {
+        for (int i = 0; i <= HEIGHT; i++ ) {
             System.out.println();
         }
-
-
 
     }
 
     public static void showMainMenu() {
         clearScreen();
         {
-            System.out.println(" ------------------------------------------ ");
+          // ALT+218 = ┌  //ALT+191 = ┐ // ALT+179 = │ // ALT+196 = ─ //ALT+192 = └ //ALT+217 = ┘
+
+            System.out.print("┌"); // top right conner
+            dashLine(); //Dash between Top right conner and Left conner
+            System.out.println("┐"); // top left conner
+
             System.out.println("|    Welcome to Stamford LCD Library Demo  |");
             System.out.println("|                                          |");
             System.out.println("|        Select a Function (1-3)           |");
-            System.out.println("|------------------------------------------|");
+
+            System.out.print("│"); //Middle left
+            dashLine();// A dash line between Middle Left and Middle right line
+            System.out.println("│");//Middle right
+
             System.out.println("|                                          |");
             System.out.println("|                  1. Login                |");
             System.out.println("|                  2. Restart              |");
             System.out.println("|                  3. Shutdown             |");
-            System.out.println(" ------------------------------------------ ");
+
+            System.out.print("└"); // Bottom left conner
+            dashLine(); //dash line between bottom left conner and right conner
+            System.out.println("┘"); // Bottom right conner
         }
 
     }
+
+    public static void dashLine() {
+        for(int i = 0; i <= WIDTH-2; i++) {
+            System.out.print("─");
+        }
+    }
+
+
+
 
     public static void showLoginMenu() {
         System.out.println(" -------------------------------------------- ");
