@@ -6,16 +6,18 @@ public class LCD {
 
     public static void clearScreen() {
 
-        for (int i = 0; i <= HEIGHT; i++ ) {
+        for (int i = 0; i <= 25; i++ ) {
             System.out.println();
         }
+
+
 
     }
 
     public static void showMainMenu() {
         clearScreen();
         {
-          // ALT+218 = ┌  //ALT+191 = ┐ // ALT+179 = │ // ALT+196 = ─ //ALT+192 = └ //ALT+217 = ┘
+            // ALT+218 = ┌  //ALT+191 = ┐ // ALT+179 = │ // ALT+196 = ─ //ALT+192 = └ //ALT+217 = ┘
 
             System.out.print("┌"); // top right conner
             dashLine(); //Dash between Top right conner and Left conner
